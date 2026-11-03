@@ -1,0 +1,33 @@
+---
+title: "My Second Quarto Document"
+format: html
+execute:
+  echo: false
+---
+
+```{r}
+#| message: false
+#| label: setup
+library(tidyverse)
+```
+
+```{r}
+#| label: iris-scatterplot
+#| fig-cap: "Sepal length and width measurements for three iris species."
+ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length, color = Species)) +
+  geom_point() +
+  scale_color_manual(
+    values = c(
+      setosa = "red",
+      versicolor = "green",
+      virginica = "blue"
+    )
+  ) +
+  labs(
+    title = "Measurements for Different Species of Iris",
+    x = "Sepal width (cm)",
+    y = "Sepal length (cm)",
+    color = "Species"
+  ) +
+  theme_minimal()
+```
