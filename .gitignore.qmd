@@ -1,0 +1,9 @@
+---
+title: ".gitignore"
+format: html
+---
+quarto-1_files
+
+```{r}
+6+3
+```
